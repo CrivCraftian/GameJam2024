@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Sword : MonoBehaviour
+{
+    GameObject player;
+    public GameObject slashPrefab;
+    public Transform slashlPoint;
+    public float slashTimer;
+
+    public int damage;
+
+    Vector2 direction;
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Swing();
+    }
+
+    private void Aim()
+    {
+        direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position);
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        Debug.Log(transform.forward);
+        //transform.position = player.transform.position + (transform.up);
+    }
+
+    private void Swing()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Aim();
+            GameObject newSlash = Instantiate(slashPrefab, slashlPoint);
+            Slash slash = newSlash.GetComponent<Slash>();
+            Rigidbody2D slashRB = newSlash.GetComponent<Rigidbody2D>();
+
+            slash.damage = this.damage;
+            newSlash.transform.parent = null;
+            slashRB.AddForce(direction.normalized * 200);
+        }
+    }
+}
