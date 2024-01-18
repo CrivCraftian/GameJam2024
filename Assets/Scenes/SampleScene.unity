@@ -538,6 +538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floor: {fileID: 1536574772}
-  wallTile: {fileID: 0}
-  dungeonSizeX: 0
-  dungeonSizeY: 0
+  wallTile: {fileID: 11400000, guid: cde11dc08845dd64da16daf8c43d4c1c, type: 2}
+  dungeonSizeX: 100
+  dungeonSizeY: 100
+  roomCount: 100
+  TrianglePrefab: {fileID: 7145912084566346490, guid: 9eb7dfc5ca1844a44be660bc5c5b5b54, type: 3}
+  EdgePrefab: {fileID: 5296691343711220890, guid: 983656dd116ec124591e0c4e6f6e0ca6, type: 3}

@@ -13,7 +13,7 @@ public static class ToScreen
             {
                 if (grid.cells[i, j] == null) continue;
 
-                if (grid.cells[i, j].CellType == CellType.Wall)
+                if (grid.cells[i, j].CellType == CellType.Floor)
                 {
                     tilemap.SetTile(new Vector3Int(i, j, 1), tile);
                 }

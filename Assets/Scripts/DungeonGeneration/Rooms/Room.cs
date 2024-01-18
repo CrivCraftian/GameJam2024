@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room : MonoBehaviour
+public class Room
 {
-    // Start is called before the first frame update
-    void Start()
+    public Vector2Int Position { get; private set; }
+
+    public int sizeX { get; private set; }
+    public int sizeY { get; private set; }
+
+    public Dictionary<Room, float> connectedRooms;
+
+    public Room(Vector2Int position, int sizeX, int sizeY)
     {
-        
+        this.Position = position;
+
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+
+        connectedRooms = new Dictionary<Room, float>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddConnection(Room room, float distance)
     {
-        
+        if(connectedRooms.ContainsKey(room))
+        {
+            return;
+        }
+
+        connectedRooms.Add(room, distance);
     }
 }
