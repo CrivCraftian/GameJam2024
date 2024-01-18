@@ -17,7 +17,7 @@ public class Grid
         cells = GridGenerator.GenerateGrid(x, y);
     }
 
-    public Vector2Int[] FindCellNeighboursVector(Vector2Int position)
+    public Vector2Int[] FindCellNeighboursVectorUDLR(Vector2Int position)
     {
         List<Vector2Int> neigbhours = new List<Vector2Int>();
 
@@ -36,6 +36,46 @@ public class Grid
         if (position.y < gridY-1)
         {
             neigbhours.Add(new Vector2Int(position.x, position.y + 1));
+        }
+
+        return neigbhours.ToArray();
+    }
+
+    public Vector2Int[] FindCellNeighboursVectorSurround(Vector2Int position)
+    {
+        List<Vector2Int> neigbhours = new List<Vector2Int>();
+
+        if (position.x > 0)
+        {
+            neigbhours.Add(new Vector2Int(position.x - 1, position.y));
+        }
+        if (position.x < gridX - 1)
+        {
+            neigbhours.Add(new Vector2Int(position.x + 1, position.y));
+        }
+        if (position.y > 0)
+        {
+            neigbhours.Add(new Vector2Int(position.x, position.y - 1));
+        }
+        if (position.y < gridY - 1)
+        {
+            neigbhours.Add(new Vector2Int(position.x, position.y + 1));
+        }
+        if (position.x > 0 && position.y > 0)
+        {
+            neigbhours.Add(new Vector2Int(position.x - 1, position.y - 1));
+        }
+        if (position.x < gridX - 1 && position.y < gridY - 1)
+        {
+            neigbhours.Add(new Vector2Int(position.x + 1, position.y + 1));
+        }
+        if (position.y > 0 && position.x < gridX - 1)
+        {
+            neigbhours.Add(new Vector2Int(position.x + 1, position.y - 1));
+        }
+        if (position.x > 0 && position.y < gridY - 1)
+        {
+            neigbhours.Add(new Vector2Int(position.x - 1, position.y + 1));
         }
 
         return neigbhours.ToArray();

@@ -205,7 +205,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 1785008876}
   - component: {fileID: 1785008878}
   - component: {fileID: 1785008877}
+  - component: {fileID: 1785008881}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -493,6 +494,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1785008881
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785008875}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
 --- !u!1 &2089643509
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,9 +555,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floor: {fileID: 1536574772}
-  wallTile: {fileID: 11400000, guid: cde11dc08845dd64da16daf8c43d4c1c, type: 2}
+  wall: {fileID: 1785008878}
+  floorTile: {fileID: 11400000, guid: 35691f77e8e933a4c89e2553ebc39ec5, type: 2}
+  wallTile: {fileID: 11400000, guid: c3ab23fba48d896408c1ab1ca5596ba5, type: 2}
   dungeonSizeX: 100
   dungeonSizeY: 100
-  roomCount: 100
+  roomCount: 50
+  lowerRoomSizeX: 5
+  greaterRoomSizeX: 12
+  lowerRoomSizeY: 5
+  greaterRoomSizeY: 12
   TrianglePrefab: {fileID: 7145912084566346490, guid: 9eb7dfc5ca1844a44be660bc5c5b5b54, type: 3}
   EdgePrefab: {fileID: 5296691343711220890, guid: 983656dd116ec124591e0c4e6f6e0ca6, type: 3}

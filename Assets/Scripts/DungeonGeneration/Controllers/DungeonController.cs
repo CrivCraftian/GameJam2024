@@ -9,6 +9,8 @@ public class DungeonController : MonoBehaviour
 {
     [Header("Tilemap/Tiles")]
     [SerializeField] Tilemap floor;
+    [SerializeField] Tilemap wall;
+    [SerializeField] Tile floorTile;
     [SerializeField] Tile wallTile;
 
     [Header("Dungeon Size")]
@@ -17,6 +19,11 @@ public class DungeonController : MonoBehaviour
 
     [Header("Rooms")]
     [SerializeField] int roomCount;
+    [SerializeField] int lowerRoomSizeX;
+    [SerializeField] int greaterRoomSizeX;
+
+    [SerializeField] int lowerRoomSizeY;
+    [SerializeField] int greaterRoomSizeY;
 
     [Header("Triangles")]
     [SerializeField] GameObject TrianglePrefab;
@@ -34,7 +41,7 @@ public class DungeonController : MonoBehaviour
     {
         Grid grid = new Grid(dungeonSizeX, dungeonSizeY);
 
-        Room[] rooms = RoomGenerator.GenerateRooms(grid, roomCount);
+        Room[] rooms = RoomGenerator.GenerateRooms(grid, roomCount, lowerRoomSizeX, lowerRoomSizeY, greaterRoomSizeX, greaterRoomSizeY);
         Vector2Int[] roomPoints = RoomGenerator.RoomsToPoints(rooms);
 
         foreach (Room room in rooms)
@@ -85,13 +92,15 @@ public class DungeonController : MonoBehaviour
                 {
                     foreach (Vector2Int point in path)
                     {
-                         grid.cells[point.x, point.y] = new Cell(CellType.Floor);
+                        grid.cells[point.x, point.y] = new Cell(CellType.Floor);
                     }
+                    ToScreen.PathToTilemap(wall, grid, wallTile, path);
                 }
             }
         }
 
-
-        ToScreen.GridToTilemap(floor, grid, wallTile);
+        ToScreen.RoomToTilemap(floor, grid, wallTile, rooms);
+        ToScreen.WallToTilemap(wall, grid, wallTile);
+        ToScreen.GridToTilemap(floor, grid, floorTile);
     }
 }

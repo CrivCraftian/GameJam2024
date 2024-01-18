@@ -27,7 +27,7 @@ public static class AStarPathfinding
 
             closedset.Add(currentPoint);
 
-            foreach(Vector2Int neighbour in grid.FindCellNeighboursVector(currentPoint))
+            foreach(Vector2Int neighbour in grid.FindCellNeighboursVectorUDLR(currentPoint))
             {
                 Debug.Log(neighbour);
                 times++;

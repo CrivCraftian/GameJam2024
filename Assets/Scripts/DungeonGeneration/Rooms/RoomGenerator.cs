@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class RoomGenerator
 {
-    public static Room[] GenerateRooms(Grid grid, int count)
+    public static Room[] GenerateRooms(Grid grid, int count, int lowerSizeX, int lowerSizeY, int largerSizeX, int largerSizeY)
     {
         List<Room> rooms = new List<Room>();
 
@@ -15,7 +15,7 @@ public static class RoomGenerator
             bool isValid = false;
             while(!isValid)
             {
-                Vector2Int tmpPosition = new Vector2Int(Random.Range(5, grid.gridX - 5), Random.Range(5, grid.gridY - 5));
+                Vector2Int tmpPosition = new Vector2Int(Random.Range(largerSizeX, grid.gridX - largerSizeX), Random.Range(largerSizeY, grid.gridY - largerSizeY));
 
                 isValid = true;
 
@@ -38,7 +38,7 @@ public static class RoomGenerator
 
         foreach(Vector2Int position in Positions)
         {
-            rooms.Add(new Room(position, 5, 5));
+            rooms.Add(new Room(position, Random.Range(lowerSizeX, largerSizeX), Random.Range(lowerSizeY, largerSizeY)));
         }
 
         return rooms.ToArray();
