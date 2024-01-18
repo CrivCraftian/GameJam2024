@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed;
     Rigidbody2D rb;
+
+    public float moveSpeed;  
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
