@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: -6141892976512443675}
   - component: {fileID: 5864931701751218713}
   - component: {fileID: 2917472556838098874}
+  - component: {fileID: 7131676032866022235}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -139,7 +140,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7283351802720397582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.8660254, w: 0.5000001}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -250,11 +251,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 5645112138416607639, guid: db6f96fbc29ea22419d56488fe1df73e, type: 3}
+  superCollider: {fileID: 7131676032866022235}
   damage: 1
   explosionDamage: 2
   explosionRadius: 0.7
-  splitEnabled: 1
-  splitAmount: 3
+  splitEnabled: 0
+  splitAmount: 10
   hasExploded: 0
 --- !u!95 &2917472556838098874
 Animator:
@@ -277,3 +279,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &7131676032866022235
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7283351802720397582}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4

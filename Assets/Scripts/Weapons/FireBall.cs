@@ -9,6 +9,8 @@ public class FireBall : MonoBehaviour
     public GameObject explosionPrefab;
     private Rigidbody2D rb;
 
+    public CircleCollider2D superCollider;
+
     public int damage;
     public int explosionDamage;
     public float explosionRadius;
@@ -17,8 +19,9 @@ public class FireBall : MonoBehaviour
     public int splitAmount;
 
     public bool hasExploded = false;
-    
+
     // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

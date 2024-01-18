@@ -39,6 +39,7 @@ public class MagicHand : MonoBehaviour
             Rigidbody2D spellRB = spell.GetComponent<Rigidbody2D>();
             spell.transform.parent = null;
             spellRB.AddForce(direction.normalized * 200);
+            spell.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction.normalized);
         }
     }
 }

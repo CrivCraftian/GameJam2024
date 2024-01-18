@@ -65,6 +65,8 @@ public class Explosion : MonoBehaviour
             GameObject fireBall = Instantiate(fireBallPrefab, transform.position, Quaternion.identity);
             FireBall fireBallScript = fireBall.GetComponent<FireBall>();
             fireBallScript.splitEnabled = false;
+            fireBallScript.superCollider.enabled = false;
+            
             fireBall.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
             Rigidbody2D fireballRB = fireBall.GetComponent<Rigidbody2D>();
             fireballRB.AddForce(direction.normalized * 200);
