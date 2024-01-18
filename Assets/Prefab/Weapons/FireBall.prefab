@@ -142,7 +142,7 @@ MonoBehaviour:
   explosionDamage: 2
   explosionRadius: 0.7
   splitEnabled: 1
-  splitAmount: 3
+  splitAmount: 5
   hasExploded: 0
 --- !u!95 &2917472556838098874
 Animator:
