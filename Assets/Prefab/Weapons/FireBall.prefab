@@ -255,6 +255,7 @@ MonoBehaviour:
   damage: 1
   explosionDamage: 1
   explosionRadius: 0.7
+  lifeSpan: 5
   splitEnabled: 1
   splitAmount: 10
   hasExploded: 0

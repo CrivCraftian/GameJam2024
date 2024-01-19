@@ -55,7 +55,7 @@ public class RoomController : MonoBehaviour
                 {
                     if (i == 1 || i == room.sizeX-1 || j == 1 || j == room.sizeY-1)
                     {
-                        Vector2 tempPosition = new Vector2Int(room.Position.x - room.sizeX / 2 + i, room.Position.y - room.sizeY / 2 + j);
+                        Vector2 tempPosition = new Vector2Int(room.Position.x + i, room.Position.y + j);
                         int randNum = Random.Range(0, 30);
 
                         switch (randNum)
@@ -84,7 +84,7 @@ public class RoomController : MonoBehaviour
 
                     if(randNum == 0)
                     {
-                        GameObject newEnemy = Instantiate(smallEnemy, tempPosition, Quaternion.identity, this.transform);
+                        GameObject newEnemy = Instantiate(largeEnemy, tempPosition, Quaternion.identity, this.transform);
                     newEnemy.GetComponent<Enemy>().player = player;
                     }
                     else if(randNum > 5 && randNum < 10)
@@ -94,7 +94,7 @@ public class RoomController : MonoBehaviour
                 }
                     else if(randNum > 10 && randNum < 20)
                     {
-                    GameObject newEnemy = Instantiate(largeEnemy, tempPosition, Quaternion.identity, this.transform);
+                    GameObject newEnemy = Instantiate(smallEnemy, tempPosition, Quaternion.identity, this.transform);
                     newEnemy.GetComponent<Enemy>().player = player;
                 }
             }

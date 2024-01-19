@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashPrefab: {fileID: 8257038240695584183, guid: f621862610128fd4b8be0e119ee37705, type: 3}
   slashlPoint: {fileID: 8874796574660717294}
-  slashTimer: 0
+  slashTimer: 1
   damage: 0
 --- !u!95 &8874796574121879766
 Animator:
