@@ -644,9 +644,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7010530650128665627, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
+      propertyPath: castRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010530650128665627, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
       propertyPath: spellrefab
       value: 
+      objectReference: {fileID: 1830342033573113934, guid: a0efaf87143d3cc46b902404313a856d, type: 3}
+    - target: {fileID: 7010530650128665627, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
+      propertyPath: fireBallPrefab
+      value: 
       objectReference: {fileID: 7283351802720397582, guid: 2e145d9e759e03d48a9ccaa7a99e3bcf, type: 3}
+    - target: {fileID: 7010530650128665627, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
+      propertyPath: lightningBallPrefab
+      value: 
+      objectReference: {fileID: 1830342033573113934, guid: a0efaf87143d3cc46b902404313a856d, type: 3}
     m_RemovedComponents:
     - {fileID: 3394281697882760920, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
