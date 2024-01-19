@@ -62,7 +62,7 @@ public class Explosion : MonoBehaviour
         for (int i = 0; i < splitAmount; i++)
         {
             Vector2 direction = new Vector2(Mathf.Sin((transform.rotation.z + angle * i) * Mathf.Deg2Rad), Mathf.Cos((transform.rotation.z + angle * i) * Mathf.Deg2Rad));
-            GameObject fireBall = Instantiate(fireBallPrefab, transform.position, Quaternion.identity);
+            GameObject fireBall = Instantiate(fireBallPrefab, transform.position + Vector3.forward * 3, Quaternion.identity);
             FireBall fireBallScript = fireBall.GetComponent<FireBall>();
             fireBallScript.splitEnabled = false;
             fireBallScript.superCollider.enabled = false;

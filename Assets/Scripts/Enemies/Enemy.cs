@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Rigidbody2D rb;
-    GameObject player;
+    public Rigidbody2D rb;
+    public GameObject player;
+    public SpriteRenderer sr;
 
     public int health;
+    public int damage;
 
     public float moveSpeed;
 
@@ -20,6 +22,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,12 +31,21 @@ public class Enemy : MonoBehaviour
         MoveTowardsPlayer();
     }
 
-    private void MoveTowardsPlayer()
+    public void MoveTowardsPlayer()
     {
         if (!stunned)
         {
             direction = (player.transform.position - transform.position).normalized;
             rb.velocity = direction * moveSpeed;
+
+            if (player.transform.position.x < transform.position.x )
+            {
+                sr.flipX = true;
+            }
+            if (player.transform.position.x > transform.position.x)
+            {
+                sr.flipX = false;
+            }
         }
     }
 

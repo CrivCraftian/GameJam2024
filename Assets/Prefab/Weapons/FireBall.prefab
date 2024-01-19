@@ -253,9 +253,9 @@ MonoBehaviour:
   explosionPrefab: {fileID: 5645112138416607639, guid: db6f96fbc29ea22419d56488fe1df73e, type: 3}
   superCollider: {fileID: 7131676032866022235}
   damage: 1
-  explosionDamage: 2
+  explosionDamage: 1
   explosionRadius: 0.7
-  splitEnabled: 0
+  splitEnabled: 1
   splitAmount: 10
   hasExploded: 0
 --- !u!95 &2917472556838098874
