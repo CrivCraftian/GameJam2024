@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5527774186424320189}
   - component: {fileID: 5527774186424320835}
-  - component: {fileID: 5527774186424320188}
   - component: {fileID: 5527774186424320833}
   - component: {fileID: 5527774186424320834}
   - component: {fileID: 5527774186424320832}
+  - component: {fileID: -5886817732537264886}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -88,25 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5527774186424320188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527774186424320190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b3f1b6c5fa0ef4aa32e5e1c7a508e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  player: {fileID: 0}
-  sr: {fileID: 0}
-  health: 100
-  damage: 0
-  moveSpeed: 1
-  stunned: 0
 --- !u!61 &5527774186424320833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,3 +156,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5886817732537264886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527774186424320190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c9ddbe253182941b5c967884877b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  sr: {fileID: 0}
+  health: 0
+  damage: 0
+  moveSpeed: 0
+  stunned: 0
