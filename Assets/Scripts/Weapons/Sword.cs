@@ -29,7 +29,6 @@ public class Sword : MonoBehaviour
         direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         Debug.Log(transform.forward);
-        //transform.position = player.transform.position + (transform.up);
     }
 
     private void Swing()
