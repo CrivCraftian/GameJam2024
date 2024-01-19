@@ -28,7 +28,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveTowardsPlayer();
+        if (player != null)
+        {
+            MoveTowardsPlayer();
+        }
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     public void MoveTowardsPlayer()
