@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+            Camera.main.transform.parent = null;
             Destroy(this.gameObject);
         }
         vulnerable = false;

@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6f603b5aab09745a90fe31e57cf318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 100
   vulnerable: 1
   iFrameLength: 1
   moveSpeed: 5

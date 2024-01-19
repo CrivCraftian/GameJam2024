@@ -162,6 +162,6 @@ MonoBehaviour:
   player: {fileID: 0}
   sr: {fileID: 0}
   health: 10
-  damage: 0
-  moveSpeed: 2
+  damage: 5
+  moveSpeed: 3
   stunned: 0
