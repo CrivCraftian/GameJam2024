@@ -47,6 +47,7 @@ MonoBehaviour:
   playerObject: {fileID: 3608188443850606340, guid: f0feeb42fd5689d41b9aed53631dd017, type: 3}
   roomObjects:
   - {fileID: 29776363602268330, guid: 3ff60e1cf37b8a54e98c14a05c473f68, type: 3}
+  - {fileID: 6388206777698398262, guid: 5d59c108c9d0d044cada9e3488f53876, type: 3}
   smallEnemy: {fileID: 5749723798576526754, guid: e8b40b579c1a9294298a47c641f20bc8, type: 3}
   mediumEnemy: {fileID: 2145320742408669798, guid: 637a43cfcf503e3438724c1151c31f7c, type: 3}
   largeEnemy: {fileID: 5527774186424320190, guid: 5b26cab6e30f1fa49a371e75d8e41029, type: 3}

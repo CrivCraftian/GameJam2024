@@ -63,15 +63,15 @@ public class RoomController : MonoBehaviour
             {
                 for (int j = 0; j < room.sizeY; j++)
                 {
-                    if (i == 1 || i == room.sizeX-1 || j == 1 || j == room.sizeY-1)
+                    if (i == 2 || i == room.sizeX-2 || j == 2 || j == room.sizeY-2)
                     {
-                        Vector2 tempPosition = new Vector2Int(room.Position.x + i, room.Position.y + j);
+                        Vector2 tempPosition = new Vector2(room.Position.x - room.sizeX / 2 + i + 0.5f, room.Position.y - room.sizeY / 2 + j + 0.5f);
                         int randNum = Random.Range(0, 20);
 
                         switch (randNum)
                         {
                             case 0:
-                                int rndNum2 = Random.Range(0, objects.Count-1);
+                                int rndNum2 = Random.Range(0, objects.Count);
                                 Instantiate(objects[rndNum2], tempPosition, Quaternion.identity, this.transform);
                                 break;
 
@@ -89,7 +89,7 @@ public class RoomController : MonoBehaviour
         {
             for (int j = 0; j < room.sizeY; j++)
             {
-                    Vector2 tempPosition = new Vector2Int(room.Position.x - room.sizeX / 2 + i, room.Position.y - room.sizeY / 2 + j);
+                    Vector2 tempPosition = new Vector2(room.Position.x - room.sizeX / 2 + i + 0.5f, room.Position.y - room.sizeY / 2 + j + 0.5f);
                     int randNum = Random.Range(0, 200);
 
                     if(randNum == 0)
