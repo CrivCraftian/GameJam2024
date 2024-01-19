@@ -15,6 +15,8 @@ public class FireBall : MonoBehaviour
     public int explosionDamage;
     public float explosionRadius;
 
+    public float lifeSpan = 5f;
+
     public bool splitEnabled;
     public int splitAmount;
 
@@ -25,6 +27,7 @@ public class FireBall : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        StartCoroutine(Lifetime());
     }
 
     // Update is called once per frame
@@ -61,5 +64,14 @@ public class FireBall : MonoBehaviour
             }
         }
         Destroy(this.gameObject);
+    }
+
+    IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(lifeSpan);
+        if (!hasExploded )
+        {
+            Explode();
+        }
     }
 }

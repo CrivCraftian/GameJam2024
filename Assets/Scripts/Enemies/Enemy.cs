@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour
 
     public int health;
     public int damage;
-
     public float moveSpeed;
 
     public bool stunned;
@@ -40,12 +39,12 @@ public class Enemy : MonoBehaviour
 
     public void MoveTowardsPlayer()
     {
-        if (!stunned)
+        if (!stunned && Vector2.Distance(transform.position, player.transform.position) < 5)
         {
             direction = (player.transform.position - transform.position).normalized;
             rb.velocity = direction * moveSpeed;
 
-            if (player.transform.position.x < transform.position.x )
+            if (player.transform.position.x < transform.position.x)
             {
                 sr.flipX = true;
             }
@@ -54,6 +53,10 @@ public class Enemy : MonoBehaviour
                 sr.flipX = false;
             }
         }
+        else 
+        {
+            rb.velocity = Vector3.zero;
+         }
     }
 
     public void KnockBack(Vector3 Velocity)
