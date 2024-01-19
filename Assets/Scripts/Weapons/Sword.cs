@@ -8,6 +8,7 @@ public class Sword : MonoBehaviour
     public GameObject slashPrefab;
     public Transform slashlPoint;
     public float slashTimer;
+    AudioSource audioSource;
 
     public int damage;
 
@@ -16,6 +17,7 @@ public class Sword : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class Sword : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Aim();
+            audioSource.Play();
             GameObject newSlash = Instantiate(slashPrefab, slashlPoint);
             Slash slash = newSlash.GetComponent<Slash>();
             Rigidbody2D slashRB = newSlash.GetComponent<Rigidbody2D>();

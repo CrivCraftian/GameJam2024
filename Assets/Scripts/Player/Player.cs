@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator animator;
+    
 
     public int health;
     public bool vulnerable = true;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
