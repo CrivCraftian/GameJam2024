@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class RoomController : MonoBehaviour
 {
-    public Room[] roomSet {  private get; set; }
+    public List<Room> roomSet {  private get; set; }
     [Header("Player")]
     [SerializeField] GameObject playerObject;
 
@@ -21,11 +22,20 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int randRoom = Random.Range(0, roomSet.Count - 1);
+
+
         GameObject player = SpawnPlayer(playerObject);
 
         foreach (Room room in roomSet)
         {
             SpawnObjects(roomObjects, room);
+        }
+
+        roomSet.Remove(roomSet[randRoom]);
+
+        foreach (Room room in roomSet)
+        {
             SpawnEnemies(smallEnemy, mediumEnemy, largeEnemy, room, player);
         }
     }
@@ -38,7 +48,7 @@ public class RoomController : MonoBehaviour
 
     private GameObject SpawnPlayer(GameObject player)
     {
-        int randRoom = Random.Range(0, roomSet.Length - 1);
+        int randRoom = Random.Range(0, roomSet.Count - 1);
 
         Vector2Int spawnPos = new Vector2Int(roomSet[randRoom].Position.x + roomSet[randRoom].sizeX/2, roomSet[randRoom].Position.y + roomSet[randRoom].sizeY/2);
 
@@ -56,7 +66,7 @@ public class RoomController : MonoBehaviour
                     if (i == 1 || i == room.sizeX-1 || j == 1 || j == room.sizeY-1)
                     {
                         Vector2 tempPosition = new Vector2Int(room.Position.x + i, room.Position.y + j);
-                        int randNum = Random.Range(0, 30);
+                        int randNum = Random.Range(0, 20);
 
                         switch (randNum)
                         {

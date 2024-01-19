@@ -110,7 +110,7 @@ public class DungeonController : MonoBehaviour
         }
 
         GameObject RoomController = Instantiate(RmController);
-        RoomController.GetComponent<RoomController>().roomSet = rooms;
+        RoomController.GetComponent<RoomController>().roomSet = rooms.ToList<Room>();
 
         ToScreen.RoomToTilemap(floor, grid, wallUp, rooms);
         ToScreen.WallToTilemap(wall, grid, wallUp, WallBottom, WallRight, WallLeft, tileRUCorner, tileRDCorner, tileLDCorner, tileLUCorner);
