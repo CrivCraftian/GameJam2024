@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Camera.main.transform.parent = null;
-            Destroy(this.gameObject);
+            SceneManager.LoadScene(2);
         }
         vulnerable = false;
         StartCoroutine(IFrames());

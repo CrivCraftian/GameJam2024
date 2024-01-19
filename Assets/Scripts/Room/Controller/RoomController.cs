@@ -90,7 +90,7 @@ public class RoomController : MonoBehaviour
             for (int j = 0; j < room.sizeY; j++)
             {
                     Vector2 tempPosition = new Vector2(room.Position.x - room.sizeX / 2 + i + 0.5f, room.Position.y - room.sizeY / 2 + j + 0.5f);
-                    int randNum = Random.Range(0, 200);
+                    int randNum = Random.Range(0, 400);
 
                     if(randNum == 0)
                     {
