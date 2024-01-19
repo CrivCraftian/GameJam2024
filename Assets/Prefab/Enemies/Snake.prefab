@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b3f1b6c5fa0ef4aa32e5e1c7a508e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 5749723798576526759}
   player: {fileID: 0}
   sr: {fileID: 0}
   health: 10
@@ -147,7 +147,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &5749723798576526758
 BoxCollider2D:

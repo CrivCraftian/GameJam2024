@@ -586,7 +586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7010530650128665627, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
       propertyPath: castRate
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7010530650128665627, guid: 8002c3e6f5b087d499f93efd8cc9c516, type: 3}
       propertyPath: spellrefab

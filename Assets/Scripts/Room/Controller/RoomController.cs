@@ -21,13 +21,13 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Room room in roomSet)
+        GameObject player = SpawnPlayer(playerObject);
+
+        foreach (Room room in roomSet)
         {
             SpawnObjects(roomObjects, room);
-            SpawnEnemies(smallEnemy, mediumEnemy, largeEnemy, room);
+            SpawnEnemies(smallEnemy, mediumEnemy, largeEnemy, room, player);
         }
-
-        SpawnPlayer(playerObject);
     }
 
     // Update is called once per frame
@@ -36,13 +36,15 @@ public class RoomController : MonoBehaviour
         
     }
 
-    private void SpawnPlayer(GameObject player)
+    private GameObject SpawnPlayer(GameObject player)
     {
         int randRoom = Random.Range(0, roomSet.Length - 1);
 
         Vector2Int spawnPos = new Vector2Int(roomSet[randRoom].Position.x + roomSet[randRoom].sizeX/2, roomSet[randRoom].Position.y + roomSet[randRoom].sizeY/2);
 
         GameObject tmpPlayer = Instantiate(playerObject, (Vector2)spawnPos, Quaternion.identity);
+
+        return tmpPlayer;
     }
 
     public void SpawnObjects(List<GameObject> objects, Room room)
@@ -71,7 +73,7 @@ public class RoomController : MonoBehaviour
             }
     }
 
-    public void SpawnEnemies(GameObject smallEnemy, GameObject mediumEnemy, GameObject largeEnemy, Room room)
+    public void SpawnEnemies(GameObject smallEnemy, GameObject mediumEnemy, GameObject largeEnemy, Room room, GameObject player)
     {
         for (int i = 0; i < room.sizeX; i++)
         {
@@ -82,16 +84,19 @@ public class RoomController : MonoBehaviour
 
                     if(randNum == 0)
                     {
-                        Instantiate(smallEnemy, tempPosition, Quaternion.identity, this.transform);
+                        GameObject newEnemy = Instantiate(smallEnemy, tempPosition, Quaternion.identity, this.transform);
+                    newEnemy.GetComponent<Enemy>().player = player;
                     }
                     else if(randNum > 5 && randNum < 10)
                     {
-                        Instantiate(mediumEnemy, tempPosition, Quaternion.identity, this.transform);
-                    }
+                    GameObject newEnemy = Instantiate(mediumEnemy, tempPosition, Quaternion.identity, this.transform);
+                    newEnemy.GetComponent<Enemy>().player = player;
+                }
                     else if(randNum > 10 && randNum < 20)
                     {
-                        Instantiate(largeEnemy, tempPosition, Quaternion.identity, this.transform);
-                    }
+                    GameObject newEnemy = Instantiate(largeEnemy, tempPosition, Quaternion.identity, this.transform);
+                    newEnemy.GetComponent<Enemy>().player = player;
+                }
             }
         }
     }
