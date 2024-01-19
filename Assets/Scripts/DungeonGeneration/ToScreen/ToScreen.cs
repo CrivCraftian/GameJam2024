@@ -23,7 +23,7 @@ public static class ToScreen
         }
     }
 
-    public static void WallToTilemap(Tilemap tilemap, Grid grid, Tile tileUP)
+    public static void WallToTilemap(Tilemap tilemap, Grid grid, Tile tileUP, Tile tileDown, Tile tileLeft, Tile tileRight, Tile tileRUCorner, Tile tileRDCorner, Tile tileLDCorner, Tile tileLUCorner)
     {
         for (int i = 0; i < grid.gridX; i++)
         {
@@ -53,6 +53,18 @@ public static class ToScreen
                         {
                             tilemap.SetTile(new Vector3Int(i, j, 1), tileUP);
                             break;
+                        }
+                        if(neighbour.x == i && neighbour.y > j)
+                        {
+                            tilemap.SetTile(new Vector3Int(i, j, 1), tileDown);
+                        }
+                        if (neighbour.x > i && neighbour.y == j)
+                        {
+                            tilemap.SetTile(new Vector3Int(i, j, 1), tileLeft);
+                        }
+                        if (neighbour.x < i && neighbour.y == j)
+                        {
+                            tilemap.SetTile(new Vector3Int(i, j, 1), tileRight);
                         }
                     }
                 }

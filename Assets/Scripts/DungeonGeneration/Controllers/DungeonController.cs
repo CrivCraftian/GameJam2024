@@ -7,11 +7,21 @@ using UnityEngine.Tilemaps;
 
 public class DungeonController : MonoBehaviour
 {
+    [Header("Room Controller")]
+    [SerializeField] GameObject RmController;
+
     [Header("Tilemap/Tiles")]
     [SerializeField] Tilemap floor;
     [SerializeField] Tilemap wall;
     [SerializeField] Tile floorTile;
-    [SerializeField] Tile wallTile;
+    [SerializeField] Tile wallUp;
+    [SerializeField] Tile WallLeft;
+    [SerializeField] Tile WallRight;
+    [SerializeField] Tile WallBottom;
+    [SerializeField] Tile tileRUCorner;
+    [SerializeField] Tile tileRDCorner;
+    [SerializeField] Tile tileLDCorner;
+    [SerializeField] Tile tileLUCorner;
 
     [Header("Dungeon Size")]
     [SerializeField]int dungeonSizeX;
@@ -94,13 +104,16 @@ public class DungeonController : MonoBehaviour
                     {
                         grid.cells[point.x, point.y] = new Cell(CellType.Floor);
                     }
-                    ToScreen.PathToTilemap(wall, grid, wallTile, path);
+                    ToScreen.PathToTilemap(wall, grid, wallUp, path);
                 }
             }
         }
 
-        ToScreen.RoomToTilemap(floor, grid, wallTile, rooms);
-        ToScreen.WallToTilemap(wall, grid, wallTile);
+        GameObject RoomController = Instantiate(RmController);
+        RoomController.GetComponent<RoomController>().roomSet = rooms;
+
+        ToScreen.RoomToTilemap(floor, grid, wallUp, rooms);
+        ToScreen.WallToTilemap(wall, grid, wallUp, WallBottom, WallRight, WallLeft, tileRUCorner, tileRDCorner, tileLDCorner, tileLUCorner);
         ToScreen.GridToTilemap(floor, grid, floorTile);
     }
 }

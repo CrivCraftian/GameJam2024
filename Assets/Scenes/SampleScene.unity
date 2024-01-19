@@ -273,15 +273,39 @@ Tilemap:
   m_Enabled: 1
   m_Tiles: {}
   m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
+  m_TileAssetArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileMatrixArray:
+  - m_RefCount: 0
+    m_Data:
+      e00: 3.0718292e-37
+      e01: 0
+      e02: 2.0401127e+10
+      e03: 2.0401127e+10
+      e10: 6.07e-43
+      e11: 0
+      e12: 6.07e-43
+      e13: 6.07e-43
+      e20: 2.3689885e-34
+      e21: 1e-45
+      e22: -5.4537444e-28
+      e23: -1.6004576e+29
+      e30: 4.5904e-41
+      e31: 0
+      e32: 6.07e-43
+      e33: 6.1e-43
+  m_TileColorArray:
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
+  m_Origin: {x: 0, y: -1, z: 0}
+  m_Size: {x: 11, y: 1, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1034,13 +1058,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f0632d3ea319341b5f81e79ab2b57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RmController: {fileID: 4565712542658326626, guid: c732cd958ee916141921e8082839fdae, type: 3}
   floor: {fileID: 558964636}
   wall: {fileID: 1621345408}
   floorTile: {fileID: 11400000, guid: 35691f77e8e933a4c89e2553ebc39ec5, type: 2}
-  wallTile: {fileID: 11400000, guid: c3ab23fba48d896408c1ab1ca5596ba5, type: 2}
-  dungeonSizeX: 100
-  dungeonSizeY: 100
-  roomCount: 50
+  wallUp: {fileID: 11400000, guid: d837f07993265c64684782dd6b657ada, type: 2}
+  WallLeft: {fileID: 11400000, guid: a036890df5e88d349ac7c872a8f55c3c, type: 2}
+  WallRight: {fileID: 11400000, guid: c9cb4d27cb247404099acbfb4d0344d9, type: 2}
+  WallBottom: {fileID: 11400000, guid: e1e6f020ddac64e4bba17db33e87ed2b, type: 2}
+  tileRUCorner: {fileID: 11400000, guid: f47e05f2861543242af4b105754543e6, type: 2}
+  tileRDCorner: {fileID: 11400000, guid: 21f2dbcabce0d514594955b7d2e01838, type: 2}
+  tileLDCorner: {fileID: 11400000, guid: cd09a0fa24b9b564d9b057fef41e47ab, type: 2}
+  tileLUCorner: {fileID: 11400000, guid: 4312b99ced022de4399d32f2143b7d10, type: 2}
+  dungeonSizeX: 200
+  dungeonSizeY: 200
+  roomCount: 100
   lowerRoomSizeX: 5
   greaterRoomSizeX: 12
   lowerRoomSizeY: 5

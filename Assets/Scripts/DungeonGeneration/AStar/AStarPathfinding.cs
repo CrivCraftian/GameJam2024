@@ -55,7 +55,6 @@ public static class AStarPathfinding
 
                     // openset.SetPriority(neighbour, fCost);
 
-                    
                     if (openset.GetPriority(neighbour) > fCost)
                     {
                         openset.SetPriority(neighbour, fCost);
