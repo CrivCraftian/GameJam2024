@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
     public void KnockBack(Vector3 Velocity)
     {
         stunned = true;
+        rb.velocity = Vector3.zero;
         rb.AddForce(Velocity);
         StartCoroutine(WakeUp());
     }
@@ -70,6 +71,14 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Slash"))
         {
             stunned = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Storm"))
+        {
+            stunned = false;
         }
     }
 
