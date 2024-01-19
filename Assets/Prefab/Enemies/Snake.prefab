@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5749723798576526752}
   - component: {fileID: 5749723798576526755}
   - component: {fileID: 5749723798576526753}
-  - component: {fileID: 5749723798576526756}
   - component: {fileID: 5749723798576526759}
   - component: {fileID: 5749723798576526758}
+  - component: {fileID: -6955155177287850292}
   m_Layer: 0
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -109,25 +109,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5749723798576526756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5749723798576526754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b3f1b6c5fa0ef4aa32e5e1c7a508e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 5749723798576526759}
-  player: {fileID: 0}
-  sr: {fileID: 0}
-  health: 10
-  damage: 0
-  moveSpeed: 3
-  stunned: 0
 --- !u!50 &5749723798576526759
 Rigidbody2D:
   serializedVersion: 4
@@ -175,3 +156,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.06, y: 0.81}
   m_EdgeRadius: 0
+--- !u!114 &-6955155177287850292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749723798576526754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7697971f3d33014fbfa68b22f2a9b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  sr: {fileID: 0}
+  health: 0
+  damage: 0
+  moveSpeed: 0
+  stunned: 0

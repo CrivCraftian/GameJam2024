@@ -34,8 +34,9 @@ public class Monster : Enemy
         if (collision.CompareTag("Player"))
         {
             Player player = collision.GetComponent<Player>();
-            if (player != null && player.vulnerable)
+            if (player != null)
             {
+                Debug.Log("touched player");
                 player.TakeDamage(damage);
                 animator.CrossFade("Attack", 0f);
             }
